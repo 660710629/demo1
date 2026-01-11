@@ -44,7 +44,8 @@ function App() {
   // Hint: ใช้ localStorage.setItem และ JSON.stringify
   useEffect(() => {
     // เติม code ที่นี่
-  }, [/* เติม dependency */])
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
 
   // TODO 7: สร้างฟังก์ชัน addTodo สำหรับเพิ่มรายการใหม่
   // Hint: ต้อง preventDefault, ตรวจสอบ inputValue ไม่ว่าง, 
@@ -95,6 +96,7 @@ function App() {
     // เติม code ที่นี่
     if (filter === 'active') return !todo.completed
     if (filter === 'completed') return todo.completed
+    return true;
    // แก้ไขให้ถูกต้อง
   })
 
